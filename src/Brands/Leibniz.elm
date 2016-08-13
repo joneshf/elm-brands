@@ -2,6 +2,7 @@ module Brands.Leibniz exposing (..)
 
 import Brands exposing (..)
 import Brands.Id as Id exposing (..)
+import Brands.Embed as Embed exposing (..)
 import Brands.Flip as Flip exposing (..)
 import Brands.Unsafe exposing (..)
 
@@ -46,3 +47,6 @@ subst : Eq a b -> App f a -> App f b
 subst =
   runLeibniz << prj
 
+cong : Eq a b -> Eq (App f a) (App f b)
+cong eq =
+  inj (Leibniz (Embed.embed >> Embed.prj >> (Embed.run << Embed.inj << subst eq)))
