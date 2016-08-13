@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "summary": "helpful summary of your project, less than 80 characters",
+    "summary": "An experiment in adding higher kinded types to elm",
     "repository": "https://github.com/joneshf/elm-brands.git",
     "license": "BSD3",
     "source-directories": [
